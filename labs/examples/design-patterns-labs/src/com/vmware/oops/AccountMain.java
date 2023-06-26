@@ -41,16 +41,36 @@ public class AccountMain {
 //        acc5.setTenure(3);
 //        acc5.setInterestType("Fixed");
         acc5.payEmi(25000.0);
-        System.out.println("Account #5 Details " + acc5.getAccId() + " " + acc5.getName() + " " + acc5.getBalance() + " " + acc5.getInterestType() + " " + acc5.isActive());
+        acc5.preClose(); // pre-closing the account
+//        acc5.payEmi(25000.0, false);
+
+        System.out.println("Account #5 Details " + acc5.getAccId() + " " + acc5.getName() + " " + acc5.checkBalance() + " " + acc5.getInterestType() + " " + acc5.isActive());
+
+        Account acc6 = new LoanAccount(201,"Sumit",true, 200000.0,3,"Fixed");
+//        Account acc6 = new SavingsAccount(101, "Ajay", 50000.0, true);
+        // not accessible
+//        acc6.payEmi(25000.0);
+//        acc.payEmi(25000.0, false);
+//        acc6.preClose(); // Not Allowed
+
+        System.out.println("Account #6 Details " + acc6.getAccId() + " " + acc6.getName() + " " + acc6.checkBalance()  + " " + acc6.isActive());
+
+        PreClossable acc7 = new LoanAccount(201,"Sumit",true, 200000.0,3,"Fixed");
+        acc7.preClose();
+
+//        acc7.checkBalance(); // Not Allowed
 
 
+        DepositAccount acc8 = new DepositAccount();
+        acc8.setBalance(50000.0);
+        System.out.println("Deposit Account Balance is " + acc8.checkBalance());
 
+//        acc8.checkBalance();
+//        acc8.preClose();
+//        System.out.println("Deposit Account Balance after pre-close is " + acc8.checkBalance());
 
-
-
-
-
-
+        acc8.autoRenew();
+        System.out.println("Deposit Account Balance after auto-renew is " + acc8.checkBalance());
 
     }
 }

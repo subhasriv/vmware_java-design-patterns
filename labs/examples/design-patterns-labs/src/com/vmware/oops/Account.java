@@ -1,9 +1,11 @@
 package com.vmware.oops;
 
+import java.io.Serializable;
+
 /**
  * Account Demo class
  */
-public abstract class Account {
+public abstract class Account { // implements Serializable, Cloneable {
     // byte, short, int, long, float, double, boolean, char
     // String
 
@@ -32,9 +34,7 @@ public abstract class Account {
         System.out.println("Opening an Account...");
         isActive = true;
     }
-    public double checkBalance() {
-        return this.balance;
-    }
+    public abstract double checkBalance();
 
     public void closeAccount() {
         System.out.println("Closing an Account...");

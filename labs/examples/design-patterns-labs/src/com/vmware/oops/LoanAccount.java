@@ -1,6 +1,6 @@
 package com.vmware.oops;
 
-public class LoanAccount extends Account {
+public class LoanAccount extends Account implements PreClossable {
     private double loanAmount;
     private int tenure;
     private String interestType;
@@ -18,7 +18,23 @@ public class LoanAccount extends Account {
 
     public void payEmi(double amount) {
 
-        this.balance -= amount * 0.5;
+//        this.balance -= amount * 0.5;
+        payEmi(amount, true);
+    }
+
+    public void payEmi(double amount, boolean interest) {
+        if(interest) {
+            this.loanAmount -= amount * 0.5;
+        } else {
+            this.loanAmount -= amount;
+        }
+    }
+
+    // method overriding
+    @Override
+    public double checkBalance() {
+        System.out.println("LoanAccount::checkBalance");
+        return this.loanAmount;
     }
 
     public void partPayment(double amount) {
@@ -48,5 +64,12 @@ public class LoanAccount extends Account {
 
     public void setInterestType(String interestType) {
         this.interestType = interestType;
+    }
+
+    @Override
+    public void preClose() {
+        System.out.println("Pre closing the loan account");
+        this.setLoanAmount(0.0);
+        this.setActive(false);
     }
 }
