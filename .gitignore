@@ -1,0 +1,17 @@
+*.project
+*.classpath
+*.iml
+**/assessments
+**/.metadata
+**/.settings
+**/target
+**/.idea
+**/lib
+**/.DS_Store
+**/RemoteSystemsTempFiles
+**/.recommenders
+**/ppt
+**/courseOutline/*.docx
+**/quiz
+**/.gitignore
+labs/setup/guide/*.docx
