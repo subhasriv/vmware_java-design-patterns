@@ -3,7 +3,7 @@ package com.vmware.oops;
 /**
  * Account Demo class
  */
-public class Account {
+public abstract class Account {
     // byte, short, int, long, float, double, boolean, char
     // String
 
@@ -11,9 +11,7 @@ public class Account {
     // Properties
     private int accId;
     private String name;
-    private double balance;
-    private String type;
-
+    protected double balance;
     private boolean isActive;
 
     // Default Constructor
@@ -22,11 +20,10 @@ public class Account {
     }
 
     // Overloaded constructor
-    public Account(int accId, String name, double balance, String type, boolean isActive) {
+    public Account(int accId, String name, double balance, boolean isActive) {
         this.accId = accId;
         this.name = name;
         this.balance = balance;
-        this.type = type;
         this.isActive = isActive;
     }
 
@@ -38,18 +35,41 @@ public class Account {
     public double checkBalance() {
         return this.balance;
     }
-    public void deposit(double amount) {
-        this.balance += amount;
-    }
-    public void withdraw(double amount) {
-        if(this.balance < amount) {
-            System.out.println("In sufficient Balance");
-        } else {
-            this.balance -= amount;
-        }
-    }
+
     public void closeAccount() {
         System.out.println("Closing an Account...");
         isActive = false;
+    }
+
+    public int getAccId() {
+        return accId;
+    }
+
+    public void setAccId(int accId) {
+        this.accId = accId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }
