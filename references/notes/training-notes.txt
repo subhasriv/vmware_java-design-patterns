@@ -1,0 +1,88 @@
+Object Oriented Programming Concepts
+
+	Class
+	Object
+		- state/properties
+		- behaviours
+	Abstraction
+	Encapsulation
+		- access modifiers -> default, private, protected, public
+	Inheritance
+		- single level, multi level, multiple, hybrid
+		- interface can help to implement multiple inheritance
+
+	Polymorphism
+		- static polymorphism	-> method overloading
+		- dynamic polymorphism -> method overriding
+
+UML Diagrams
+	Usecase Diagram
+	Activity Diagram
+	Class Diagram
+	Sequence Diagram
+	Package Diagram
+	Deployment Diagram	
+
+
+Cohesion
+	- degree of keep related things together
+		
+Coupling
+	- degree of dependency with other entities
+
+BAD Design Symptoms
+	Rigidity
+	Fragility
+	Immobility
+	
+
+OO Design Principles
+	High Cohesion
+	Loose Coupling
+
+	1. Encapsulate what varies
+	2. Program to an interface, not an implementation
+	3. Favour Composition over Inheritance
+	4. Implementation Inheritance vs Interface Inheritance
+	5. Principle of Least Knowledge - talk only to your immediate friends
+	6. Hollywood Principle - Don’t call us, we’ll call you
+	
+	SOLID
+	S - Single Responsibility Principle (SRP)
+	O - Open Close Principle (OCP)
+	L  - Leskov’s Substitution Principle (LSP)
+	I   - Interface Segregation Principle (ISP)
+	D - Dependency Inversion Principle (DIP)
+
+Design Patterns (GoF - 23 patterns)
+	
+	Creational (5)
+		Singleton
+		Factory
+			- Factory Method
+		AbstractFactory
+		Prototype
+		Builder
+		Object Pool
+		
+	Structural (7)
+		Adapter
+		Bridge
+		Decorator
+		Composite
+		Proxy
+		Facade
+		Flyweight
+
+	Behavioral (11)
+		Chain of Resposibility
+		Command
+		Iterator
+		Observer
+		Mediator
+		Memento
+		State
+		Strategy
+		Template
+		Visitor
+		Interpreter
